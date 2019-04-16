@@ -22,5 +22,5 @@ cell_size = Vector2( 32, 32 )
 collision_use_kinematic = true
 collision_layer = 2
 format = 1
-tile_data = PoolIntArray( 393236, 3, 0, 393237, 3, 0, 393238, 3, 0, 524297, 3, 0, 524298, 3, 0, 524304, 3, 0, 524305, 3, 0, 524306, 3, 0, 524307, 3, 0 )
+tile_data = PoolIntArray( 393236, 3, 0, 393237, 3, 0, 393238, 3, 0, 524297, 3, 0, 524298, 3, 0, 524304, 3, 0, 524305, 3, 0 )
 

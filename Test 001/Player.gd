@@ -2,10 +2,11 @@ extends KinematicBody2D
 
 export var player_name : String = "Astronaut"
 
-export var MAX_SPEED : float = 100
+export var MAX_SPEED : float = 80
 export var ACCELERATION : float = 1000
 export var FRICTION : float = 1500
-export var JUMP: float = 175
+export var MAX_JUMP : float = 175
+export var DELTA_JUMP : float = 25
 export var GRAVITY : float = 225
 
 onready var c = get_node("AnimatedSprite")
@@ -14,6 +15,7 @@ var input_direction : int = 0
 var direction : int = 0
 var speed : float = 0
 var velocity : float  = 0
+var current_jump : float = 0
 
 const UP = Vector2(0,-1)
 var motion : Vector2
@@ -40,9 +42,11 @@ func _physics_process(delta):
 	speed = clamp(speed,0,MAX_SPEED)
 	velocity = speed * direction
 	motion.x = velocity
-	if is_on_floor() and Input.is_action_pressed("ui_up"):
-		motion.y -= JUMP 
+	if is_on_floor():
+		if Input.is_action_pressed("ui_up"):
+			motion.y -= MAX_JUMP
 	else:	
+		current_jump = 0
 		motion.y += GRAVITY * delta
 
 	motion = move_and_slide(motion,UP)
@@ -53,18 +57,22 @@ func calculate_movement(input_direction):
 	pass
 
 func play_animation(input_direction):
-
+	var play_animation = false
+	
 	if input_direction > 0:
 		c.animation = "RightWalk"
 		c.speed_scale = 1.5
-		
+		play_animation = true
 	elif input_direction < 0:
 		c.animation = "LeftWalk"
 		c.speed_scale = 1.5
+		play_animation = true
 	else:
 		c.animation = "Idle"
 		c.speed_scale = .25
-	# Only animate if the player is the ground
-	c.playing = is_on_floor()
+		play_animation = true
+	c.playing = play_animation
 	if is_on_wall():
 		print("ouch")
+	if !is_on_floor():
+		print ("can't walk")
