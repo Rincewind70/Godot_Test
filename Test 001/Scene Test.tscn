@@ -1,23 +1,23 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Tiles/AstroBase.tres" type="TileSet" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tiles/AstroBase.tres" type="TileSet" id=2]
 
 [node name="Scene Test" type="Node2D"]
 
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 481.751, 251.615 )
+
 [node name="PlatformTiles" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 collision_use_kinematic = true
 collision_layer = 2
 format = 1
 tile_data = PoolIntArray( 458771, 8, 0, 458772, 0, 0, 458773, 1, 0, 458774, 2, 0, 524306, 8, 0, 524307, 9, 0, 589831, 0, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 2, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 481.751, 251.615 )
-
 [node name="FrontTiles" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 collision_use_kinematic = true
 collision_layer = 2
