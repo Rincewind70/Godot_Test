@@ -19,10 +19,6 @@ config/name="Test 001"
 run/main_scene="res://Scene Test.tscn"
 config/icon="res://icon.png"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/stretch/aspect="keep"
