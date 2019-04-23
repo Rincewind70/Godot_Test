@@ -42,13 +42,16 @@ position = Vector2( 0, -1 )
 current = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -31.7899, -64.121 )
 frames = SubResource( 1 )
 animation = "RightWalk"
-frame = 2
+frame = 1
 playing = true
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2.658 )
+show_behind_parent = true
+position = Vector2( 0, -29 )
 z_as_relative = false
 shape = SubResource( 2 )
 
