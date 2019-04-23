@@ -31,8 +31,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 14.1769
-height = 30.3913
+radius = 14.0
+height = 31.0
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -40,18 +40,17 @@ script = ExtResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -1 )
 current = true
+zoom = Vector2( 0.5, 0.5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -31.7899, -64.121 )
+position = Vector2( -0.997511, 0.217575 )
 frames = SubResource( 1 )
-animation = "RightWalk"
-frame = 1
+animation = "LeftWalk"
+frame = 2
 playing = true
-centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-show_behind_parent = true
-position = Vector2( 0, -29 )
+position = Vector2( -1, 3 )
 z_as_relative = false
 shape = SubResource( 2 )
 
