@@ -7,13 +7,6 @@
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 481.751, 251.615 )
-player_name = null
-MAX_SPEED = null
-ACCELERATION = null
-GRAVITY = null
-FRICTION = null
-MAX_JUMP = null
-DELTA_JUMP = null
 
 [node name="PlatformTiles" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
