@@ -48,7 +48,6 @@ func _process(delta):
 	# Animation
 	play_animation(movement,is_on_floor())	
 
-
 func get_input(m:Movement):
 	var last_direction : int = 0
 	if input_direction:
@@ -93,7 +92,6 @@ func calc_movement(delta,m:Movement):
 
 	# Update movement	
 	m.motion = move_and_slide(m.motion,UP)
-
 
 func play_animation(m:Movement,on_ground:bool):
 	if m.speed != 0:
